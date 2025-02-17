@@ -1,7 +1,31 @@
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
+import TransitionText from "./TransitionText";
+import TransitionalText from "./TransitionText";
+import { Pill } from "lucide-react";
 {/* ACCUEIL DE KOULMED */}
 const Hero = () => {
+     const TEXTS = [
+        "Médecin général",
+        "Pédiatre",
+        "Gynécologe",
+        "Obstétricien",
+        "Cardiologue",
+        "Dermatologue",
+        "Endocrinologie",
+        "Neurologue",
+        "Rhumatologue",
+        "Pneumologue",
+        "Chirurgien",
+        "Ophtalmologe",
+        "ORL",
+        "Psychiatre",
+        "Psychologe",
+        "Kinésithérapeute",
+        "Dentiste",
+        "Pharmacien",
+        "Parapharmacien",
+      ];
   return (
      <div className="bg-lime-600">
          <div className="relative  pb-[110px] pt-[50px] dark:bg-dark lg:pt-[50px] max-w-6xl mx-auto">
@@ -9,58 +33,33 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 lg:w-5/12">
               <div className="hero-content">
-                <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-gray-50 dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl">
-                  Koulmed Votre Hopital à porter de Main
+                <h1 className="mb-5 text-4xl font-bold !leading-[1.208] text-gray-50 dark:text-white sm:text-[42px] lg:text-[40px] xl:text-5xl flex flex-wrap items-center gap-3">
+                 <span>Réservez votre</span>{" "} <TransitionalText className="text-blue-700" TEXTS={TEXTS}/> <br />  <span>dès maintenant</span>
                 </h1>
                 <p className="mb-8 max-w-[480px] text-base text-gray-100 dark:text-dark-6">
-                   Une Solution digitale qui ramène les services de santé de base de l'hopital vers la population
+                La santé ne devrait pas être un casse-tête, nous éliminons les longues procédures pour vous offrir des soins de santé simples, abordables et transparents. Koulmed votre Hôpital en Main
                 </p>
                 {/* BARRE DE RECHERCHE ET BOUTON CTA: CALL TO ACTION */}
                   <SearchBar/>
-                <ul className="flex flex-wrap items-center mt-6">
-                  <li>
+                <ul className="flex flex-wrap items-center justify-between w-full gap-4 mt-6">
+                  <li className="flex-1">
                     <a
                       href="/#"
-                      className="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-700 lg:px-7"
+                      className="inline-flex w-full items-center justify-center rounded-md bg-blue-700 px-6 py-3 text-center text-base font-medium text-white hover:bg-blue-700 lg:px-7"
                     >
-                      Get Started
+                      J'AI BESOIN URGEMMENT D'UN DOCTEUR
                     </a>
                   </li>
-                  <li>
+                  <li className="flex-1">
                     <a
                       href="/#"
-                      className="inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-white hover:text-blue-700 dark:text-white"
+                      className="inline-flex w-full items-center justify-center rounded-md bg-gray-50 px-5 py-3 text-center text-base font-medium text-blue-700 hover:text-blue-700 dark:text-white"
                     >
                       <span className="mr-2">
-                        <svg
-                          width="24"
-                          height="25"
-                          viewBox="0 0 24 25"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <circle cx="12" cy="12.6152" r="12" fill="#3758F9" />
-                          <rect
-                            x="7.99893"
-                            y="14.979"
-                            width="8.18182"
-                            height="1.63636"
-                            fill="white"
-                          />
-                          <rect
-                            x="11.2717"
-                            y="7.61523"
-                            width="1.63636"
-                            height="4.09091"
-                            fill="white"
-                          />
-                          <path
-                            d="M12.0898 14.1606L14.9241 11.0925H9.25557L12.0898 14.1606Z"
-                            fill="white"
-                          />
-                        </svg>
+                        <Pill className="flex-shrink-0 h-5 w-5  "/>
+                         
                       </span>
-                      Download App
+                      J'AI BESOIN D'UNE CONSULTATION  MEDICALE
                     </a>
                   </li>
                 </ul>
