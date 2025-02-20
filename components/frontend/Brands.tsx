@@ -1,6 +1,13 @@
 import React from "react";
 
-const brandsData = [
+interface Brand {
+  imageSrc: string;
+  lightImageSrc: string;
+  altText: string;
+  link: string;
+}
+
+const brandsData: Brand[] = [
   {
     imageSrc:
       "https://cdn.tailgrids.com/2.2/assets/images/brands/graygrids.svg",
@@ -36,7 +43,7 @@ const brandsData = [
 export default function Brand1() {
   return (
     <section className="bg-slate-100 py-10 lg:py-[60px] dark:bg-dark">
-        <h2 className="text-center pb-6">Marques de Confiance</h2>
+      <h2 className="text-center pb-6">Marques de Confiance</h2>
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -52,21 +59,15 @@ export default function Brand1() {
   );
 }
 
-const SingleImage = ({ brand }) => {
+const SingleImage: React.FC<{ brand: Brand }> = ({ brand }) => {
   const { link, imageSrc, lightImageSrc, altText } = brand;
   return (
-    <>
-      <a
-        href={link}
-        class="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
-      >
-        <img src={imageSrc} alt={altText} class="h-10 w-full dark:hidden" />
-        <img
-          src={{ lightImageSrc }}
-          alt={altText}
-          class="hidden h-10 w-full dark:block"
-        />
-      </a>
-    </>
+    <a
+      href={link}
+      className="mx-4 flex w-[150px] items-center justify-center py-5 2xl:w-[180px]"
+    >
+      <img src={imageSrc} alt={altText} className="h-10 w-full dark:hidden" />
+      <img src={lightImageSrc} alt={altText} className="hidden h-10 w-full dark:block" />
+    </a>
   );
 };
