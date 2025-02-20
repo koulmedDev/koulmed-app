@@ -144,13 +144,13 @@ const megaMenu = [
 ]
 export default function MegaMenu() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="bg-white">
       <NavigationMenuList className="space-x-4"> 
         {
             megaMenu.map((item,i)=>{
                 return(
                     <NavigationMenuItem  key={i}>
-                    <NavigationMenuTrigger className="bg-lime-600 text-gray-50">{item.title}</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="bg-white text-gray-950">{item.title}</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                         {item.services.map((component) => (
