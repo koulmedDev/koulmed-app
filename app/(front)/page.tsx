@@ -11,6 +11,7 @@ import React from "react";
     <section className="">
        <Hero/> 
        <Brand1/>
+       <div className="mx-auto max-w-6xl"></div>
        <TabbedSection/>
     </section>
   );
