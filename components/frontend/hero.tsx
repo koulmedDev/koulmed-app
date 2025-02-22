@@ -27,7 +27,7 @@ const Hero = () => {
         "Parapharmacien",
       ];
   return (
-     <div className="bg-lime-600 mt-[160px]">
+     <div className="bg-lime-600 ">
          <div className="relative  pb-[110px] pt-[50px] dark:bg-dark lg:pt-[50px] max-w-6xl mx-auto">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
